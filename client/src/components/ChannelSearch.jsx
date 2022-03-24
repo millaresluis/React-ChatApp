@@ -15,12 +15,12 @@ const ChannelSearch = () => {
         }
     }
 
-    const onSearch = (event) => {
-        event.preventDefault();
+    const onSearch = (e) => {
+        e.preventDefault();
 
         setLoading(true);
-        setQuery(event.target.value);
-        getChannels(event.target.value);
+        setQuery(e.target.value);
+        getChannels(e.target.value);
     }
     return (
         <div className="channel-search__container">

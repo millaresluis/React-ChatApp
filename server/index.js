@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const authRoutes = require('./routes/auth.js')
+const authRoutes = require("./routes/auth.js");
 
 
 const app = express();
@@ -17,6 +17,6 @@ app.get('/', (req, res) => {
     res.send('test')
 })
 
-app.use('./auth', authRoutes);
+app.use('/auth', authRoutes);
 
 app.listen(PORT, () => console.log('running'))

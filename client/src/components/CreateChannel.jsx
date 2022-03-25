@@ -5,8 +5,6 @@ import {UserList} from './';
 import { CloseCreateChannel } from '../assets';
 
 const ChannelNameInput = ({channelName = '', setChannelName}) => {
-  const [selectedUsers, setSelectedUsers] = useState([client.userID || '']);
-  const {client, setActiveChannel} = useChatContext();
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -24,7 +22,9 @@ const ChannelNameInput = ({channelName = '', setChannelName}) => {
 }
 
 const CreateChannel = ({createType, setIsCreating}) => {
+  const {client, setActiveChannel} = useChatContext();
   const [channelName, setChannelName] = useState('');
+  const [selectedUsers, setSelectedUsers] = useState([client.userID || '']);
 
   return (
     <div className='create-channel__container'>

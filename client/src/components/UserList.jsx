@@ -27,6 +27,7 @@ const UserItem = ({user, setSelectedUsers}) => {
 
     setSelected((prevSelected) => !prevSelected)
   }
+
   return (
     <div className="user-item__wrapper" onClick={handleSelect}>
         <div className="user-item__name-wrapper">
@@ -38,7 +39,7 @@ const UserItem = ({user, setSelectedUsers}) => {
   )
 }
 
-const UserList = () => {
+const UserList = ({ setSelectedUsers }) => {
   const {client} = useChatContext();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);

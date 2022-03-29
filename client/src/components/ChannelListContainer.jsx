@@ -61,10 +61,10 @@ const ChannelListContent = ({isCreating,setIsCreating,setCreateType,setIsEditing
         <SideBar logout={logout}/>
         <div className="channel-list__list__wrapper">
             <CompanyHeader/>
-            <ChannelSearch/>
+            <ChannelSearch setToggleContainer={setToggleContainer}/>
             <ChannelList
                 filters={filters}
-                channelRenderFilterFn={() => {customChannelTeamFilter}}
+                channelRenderFilterFn= {customChannelTeamFilter}
                 // team channel list
                 List={(listProps) => (
                     <TeamChannelList
@@ -92,7 +92,7 @@ const ChannelListContent = ({isCreating,setIsCreating,setCreateType,setIsEditing
 
             <ChannelList
                 filters={filters}
-                channelRenderFilterFn={() => {customChannelMessagingFilter}}
+                channelRenderFilterFn= {customChannelMessagingFilter}
                 // team channel list
                 List={(listProps) => (
                     <TeamChannelList
@@ -122,7 +122,7 @@ const ChannelListContent = ({isCreating,setIsCreating,setCreateType,setIsEditing
   );
 }
 
-const ChannelListContainer = ({setCreateType, setIsCreating, setIsEditing, }) => {
+const ChannelListContainer = ({setCreateType, setIsCreating, setIsEditing, isCreating }) => {
     const [toggleContainer, setToggleContainer] = useState(false);
 
     return (
